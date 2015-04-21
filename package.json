@@ -8,7 +8,7 @@
   "private": true,
   "scripts": {
     "start": "./node_modules/.bin/nodemon --ignore node_modules shortly.js",
-    "test": "node shortly.js& ./node_modules/.bin/mocha --bail --reporter nyan test/ServerSpec.js; pkill -n node;"
+    "test": "node shortly.js& ./node_modules/.bin/mocha --timeout 10000 --reporter nyan test/ServerSpec.js; pkill -n node;"
   },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
@@ -25,6 +25,6 @@
     "mocha": "^1.17.1",
     "nodemon": "^1.2.1",
     "request": "^2.34.0",
-    "sqlite3": "~2.2.0"
+    "sqlite3": "~3.0.5"
   }
 }
