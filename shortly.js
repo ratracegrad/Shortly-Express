@@ -24,7 +24,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public'));
 
 
-
+// solution also uses resave and saveUninitialized
 app.use(session({secret: '111'}));
 
 var sess;
@@ -57,7 +57,8 @@ var signupPage = function(req, res){
       //res.redirect('/login');
       // - also found a bug - we need to click 'sign up' twice for it to work
     } else {
-
+      req.session.username = username;
+      req.session.password = password;
       var auser = new User({
         username: username,
         password: password
@@ -67,43 +68,35 @@ var signupPage = function(req, res){
         Users.add(newUser);
       });
 
+      res.redirect('/');
+
     }
   })
 };
 
-app.get('/',
-function(req, res) {
-  if (req.session.username) {
-    res.render('index');
-  } else {
-    res.redirect('/login');
-  }
+app.get('/', util.checkUser, function(req, res) {
+  res.render('index');
 });
 
 
-app.get('/create', 
-function(req, res) {
-  if (req.session.username) {
+app.get('/create', util.checkUser, function(req, res) {
     res.render('index');
-  } else {
-    res.redirect('/login');
-  }
-});
+  });
 
-app.get('/links', 
+app.get('/links', util.checkUser, 
 function(req, res) {
-  if (req.session.username) {
     Links.reset().fetch().then(function(links) {
       res.send(200, links.models);
     });
-    } else {
-     res.redirect('/login');
-   }
 });
 
 app.post('/links', 
 function(req, res) {
   var uri = req.body.url;
+
+    db.knex('urls').then(function(response) {
+    console.log(response);
+  });
 
   if (!util.isValidUrl(uri)) {
     return res.send(404);
@@ -141,7 +134,6 @@ app.get('/login',
 function(req, res, next) {
   res.render('login');
 });
-
 
 app.post('/login',
 function(req, res, next) {
