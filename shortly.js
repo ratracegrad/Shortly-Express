@@ -94,10 +94,6 @@ app.post('/links',
 function(req, res) {
   var uri = req.body.url;
 
-    db.knex('urls').then(function(response) {
-    console.log(response);
-  });
-
   if (!util.isValidUrl(uri)) {
     return res.send(404);
   }

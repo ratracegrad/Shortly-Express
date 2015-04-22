@@ -11,18 +11,25 @@ a {
 }
 
 h1 {
+  font-size: 80px;
   font-style: italic;
   margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 40px;
 }
 
 .navigation {
   width: 100%;
   height: 40px;
   background-color: #eee;
+  display: inline-block;
 }
 
 .navigation ul {
   margin: 0;
+  /*margin-left: 40%;*/
   padding: 0;
   list-style: none;
 }
@@ -37,11 +44,10 @@ h1 {
 
 .navigation li a , .logout {
   width: 100px;
-  height: 20px;
+  height: 40px;
   line-height: 20px;
   padding: 10px;
   display: block;
-  text-align: center;
 }
 
 .navigation li a:hover {
@@ -52,9 +58,11 @@ h1 {
   background-color: #ccc;
 }
 
-#container {
+.container {
   clear: both;
-  margin-top: 10px;
+  //margin-top: 10px;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .link {
@@ -106,7 +114,7 @@ form input[type=text], form input[type=password] {
   display: block;
   font-size: 13px;
   padding: 5px;
-  margin-bottom: 5px;
+  margin: 0 auto;
 }
 
 .error {
@@ -134,4 +142,7 @@ form input[type=text], form input[type=password] {
 
 .creator .message {
   clear: both;
+}
+.logo {
+  margin-bottom: 15px;
 }

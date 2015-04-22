@@ -177,9 +177,6 @@ describe('', function() {
 
         requestWithSession(options, function(error, res, body) {
           var code = res.body.code;
-          console.log("res body code " +res.body.code);
-          //console.log("link.get" + link);
-
           expect(code).to.equal(link.get('code'));
           done();
         });
@@ -257,7 +254,6 @@ describe('', function() {
           .where('username', '=', 'Svnh')
           .then(function(res) {
             if (res[0] && res[0]['username']) {
-              console.log('found user');
               var user = res[0]['username'];
             }
             expect(user).to.equal('Svnh');
