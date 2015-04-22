@@ -10,7 +10,7 @@ var User = require('./app/models/user');
 var Links = require('./app/collections/links');
 var Link = require('./app/models/link');
 var Click = require('./app/models/click');
-
+var port = process.env.PORT || 3000;
 
 var app = express();
 
@@ -181,4 +181,5 @@ app.get('/*', function(req, res) {
 });
 
 console.log('Shortly is listening on 4568');
-app.listen(4568);
+//app.listen(4568);
+app.listen(port);
