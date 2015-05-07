@@ -29,3 +29,7 @@ List of URLs that have been shortened
 4. Launch Express server with `node shortly.js`
 5. Create an account
 6. Enter your favorite URLs to shorten
+
+## Alternative Version
+After creating this version, I rewrote it using AngularJS and a MongoDB database. It still uses a NodeJS server.
+[The Angular version is here.](https://github.com/ratracegrad/Shortly)
