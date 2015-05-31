@@ -1,6 +1,8 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+# Shortly Express
+
+> Demonstraton of using Express server with a Sqlite database to shorten and store URLs. Shortly Express is hosted on a Node Express server.
+
+**Table of Contents** 
 
 - [Shortly Express](#shortly-express)
   - [Technology Stack](#technology-stack)
@@ -10,12 +12,6 @@
   - [Live Preview](#live-preview)
   - [Screenshot](#screenshot)
   - [Alternative Version](#alternative-version)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-# Shortly Express
-
-> Demonstraton of using Express server with a Sqlite database to shorten and store URLs. Shortly Express is hosted on a Node Express server.
 
 ## Technology Stack
 1. Node.js
